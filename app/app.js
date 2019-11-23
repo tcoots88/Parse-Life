@@ -21,6 +21,7 @@ function collegeFormRender() {
   collegeFeildSetElem.appendChild(collegeLegendElem);
   collegeLegendElem.textContent = 'Life as a Young Adult';
 
+  //First Input-Education Path
   var educationPath = document.createElement('p');
   educationPath.textContent = 'What educational path did you take?';
   collegeFeildSetElem.appendChild(educationPath);
@@ -37,6 +38,7 @@ function collegeFormRender() {
     educationDropDownElem.appendChild(collegeOptionElem);
   }
 
+  //Second Input - Degree Family
   var degreeFamilyQuestion = document.createElement('p');
   degreeFamilyQuestion.textContent = 'What educational path did you take?';
   collegeFeildSetElem.appendChild(degreeFamilyQuestion);
@@ -52,6 +54,7 @@ function collegeFormRender() {
     degreeDropDownElem.appendChild(degreeOptionElem);
   }
 
+  //Third Input - Marital Status
   var maritalQuestion = document.createElement('p');
   maritalQuestion.textContent = 'Are you married?';
   collegeFeildSetElem.appendChild(maritalQuestion);
@@ -76,25 +79,30 @@ function collegeFormRender() {
   isNotMarried.value = 'no';
   maritalQuestionFalse.appendChild(isNotMarried);
 
+  //Fourth Input - Belief System
+  var beliefsQuestion = document.createElement('p');
+  beliefsQuestion.textContent = 'Do you have a belief system?';
+  collegeFeildSetElem.appendChild(beliefsQuestion);
 
+  var beliefsQuestionTrue = document.createElement('p');
+  beliefsQuestionTrue.textContent = 'Yes';
+  beliefsQuestion.appendChild(beliefsQuestionTrue);
 
-  // var possibleMaritialAnswers = ['yes', 'no'];
-  // for (var i = 0; i < possibleMaritialAnswers.length; i++) {
-  //   var maritalForm = document.getElementsByName('fieldset');
-  //   maritalForm.appendChild(collegeInputElem);
-  //   collegeInputElem.type = 'radio';
-  //   collegeInputElem.name = 'maritalStatus';
-  //   collegeInputElem.value = possibleMaritialAnswers[i];
-  // }
+  var hasBeliefs = document.createElement('input');
+  hasBeliefs.type = 'radio';
+  hasBeliefs.name = 'beliefs';
+  hasBeliefs.value = 'yes';
+  beliefsQuestionTrue.appendChild(hasBeliefs);
 
-  // collegeFeildSetElem.appendChild(collegeInputElem);
-  // collegeInputElem.type = 'radio';
-  // collegeInputElem.name = 'beliefStatus';
-  // collegeInputElem.value = 'yes';
-  // collegeFeildSetElem.appendChild(collegeInputElem);
-  // collegeInputElem.type = 'radio';
-  // collegeInputElem.name = 'beliefStatus';
-  // collegeInputElem.value = 'no';
+  var beliefsQuestionFalse = document.createElement('p');
+  beliefsQuestionFalse.textContent = 'No';
+  beliefsQuestion.appendChild(beliefsQuestionFalse);
+
+  var doesNotBelieve = document.createElement('input');
+  doesNotBelieve.type = 'radio';
+  doesNotBelieve.name = 'beliefs';
+  doesNotBelieve.value = 'no';
+  beliefsQuestionFalse.appendChild(doesNotBelieve);
 }
 
 collegeFormRender();
