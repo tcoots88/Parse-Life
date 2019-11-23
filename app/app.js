@@ -36,15 +36,15 @@ function collegeFormRender() {
     collegeOptionElem.textContent = education[path];
   }
 
-  // var degreeDropDownElem = document.createElement('select');
-  // var degreeType = ['Science', 'Arts', 'Math', 'None'];
-  // for (var family = 0; family < degreeType.length; family++) {
-  //   var degreeOptionElem = document.createElement('option');
-  //   collegeFeildSetElem.appendChild(degreeDropDownElem);
-  //   degreeDropDownElem.appendChild(degreeOptionElem);
-  //   degreeOptionElem.value = degreeType[family];
-  //   degreeOptionElem.textContent = degreeType[family];
-  // }
+  var degreeDropDownElem = document.createElement('select');
+  var degreeType = ['Science', 'Arts', 'Math', 'None'];
+  for (var family = 0; family < degreeType.length; family++) {
+    var degreeOptionElem = document.createElement('option');
+    collegeFeildSetElem.appendChild(degreeDropDownElem);
+    degreeDropDownElem.appendChild(degreeOptionElem);
+    degreeOptionElem.value = degreeType[family];
+    degreeOptionElem.textContent = degreeType[family];
+  }
 
   // var possibleMaritialAnswers = ['yes', 'no'];
   // for (var i = 0; i < possibleMaritialAnswers.length; i++) {
