@@ -201,3 +201,13 @@ careerFulfillment.id = 'id';
 careerFulfillmentLabel.appendChild(careerFulfillment);
 
 //------------------------------------------------------------------------------------------------
+function birthHandler(){
+
+}
+
+function deathHandler(){
+
+
+}
+
+//
