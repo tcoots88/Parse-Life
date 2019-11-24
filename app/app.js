@@ -10,6 +10,7 @@ function collegeFormRender() {
   // var collegeLabelElem = document.createElement('label');
   collegeSection.appendChild(collegeFormElem);
   collegeFormElem.id = 'stringify';
+  collegeFormElem.form = 'collegeQuestions';
   collegeFormElem.appendChild(collegeFeildSetElem);
   collegeFeildSetElem.appendChild(collegeLegendElem);
   collegeLegendElem.textContent = 'Life as a Young Adult';
@@ -96,6 +97,15 @@ function collegeFormRender() {
   doesNotBelieve.name = 'beliefs';
   doesNotBelieve.value = 'no';
   beliefsQuestionFalse.appendChild(doesNotBelieve);
+
+
+  //Submit button for form
+  var submitCollegeForm = document.createElement('button');
+  submitCollegeForm.type = 'submit';
+  submitCollegeForm.value = 'Submit';
+  submitCollegeForm.form = 'collegeQeustions',
+  submitCollegeForm.textContent = 'Continue';
+  collegeFeildSetElem.appendChild(submitCollegeForm);
 }
 
 function careerFormRender() {
