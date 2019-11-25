@@ -2,7 +2,7 @@
 
 //Global Array for College Form
 var collegeArray = [];
-// var careerArray = [];
+var careerArray = [];
 // var storageArray = [];
 
 function collegeFormRender() {
@@ -12,7 +12,6 @@ function collegeFormRender() {
   var collegeFormElem = document.createElement('form');
   collegeFormElem.id = 'stringify';
   var collegeFeildSetElem = document.createElement('fieldset');
-  collegeFeildSetElem.id = 'collegeQuestions';
   var collegeLegendElem = document.createElement('legend');
   collegeLegendElem.textContent = 'Life as a Young Adult';
   collegeSection.appendChild(collegeFormElem);
@@ -115,13 +114,14 @@ function careerFormRender() {
   //Start of the career form
   var careerSection = document.getElementById('career');
   var careerFormElem = document.createElement('form');
+  careerFormElem.id = 'finishedProduct';
   var careerFeildSetElem = document.createElement('fieldset');
   var careerLegendElem = document.createElement('legend');
+  careerLegendElem.textContent = 'Life as an Adult';
   careerSection.appendChild(careerFormElem);
-  careerFormElem.id = 'finishedProduct';
   careerFormElem.appendChild(careerFeildSetElem);
   careerFeildSetElem.appendChild(careerLegendElem);
-  careerLegendElem.textContent = 'Life as an Adult';
+
 
   //First Input-Career Path
   var careerPath = document.createElement('p');
@@ -130,7 +130,8 @@ function careerFormRender() {
 
   var career = ['Military', 'Buisness', 'Engineer', 'Finance', 'Skill Trade', 'Other'];
   var careerDropDownElem = document.createElement('select');
-  careerFeildSetElem.appendChild(careerDropDownElem);
+  careerDropDownElem.name = 'careerPath';
+  careerPath.appendChild(careerDropDownElem);
 
   for (var path = 0; path < career.length; path++) {
     var careerOptionElem = document.createElement('option');
@@ -145,6 +146,7 @@ function careerFormRender() {
   careerFeildSetElem.appendChild(adultHobbiesQuestion);
 
   var hobbiesAsAdultText = document.createElement('input');
+  hobbiesAsAdultText.name = 'adultHobbies';
   hobbiesAsAdultText.type = 'text';
   adultHobbiesQuestion.appendChild(hobbiesAsAdultText);
 
@@ -190,15 +192,10 @@ function careerFormRender() {
   careerFeildSetElem.appendChild(regionAdultElement);
 
   var regionAdultField = document.createElement('input');
+  regionAdultField.name = 'regionAsAdult';
   regionAdultField.type = 'text';
 
   regionAdultElement.appendChild(regionAdultField);
-
-  // var submitForm = document.createElement('button');
-  // submitForm.type = 'submit';
-  // submitForm.value = 'careerSubmit';
-  // submitForm.textContent = 'Continue';
-  // careerFeildSetElem.appendChild(submitForm);
 
   formSubmission(careerFeildSetElem, 'careerSubmit');
 }
@@ -211,16 +208,10 @@ function formSubmission(formElem, formValue) {
   formElem.appendChild(submitForm);
 }
 
-// function Nameobj(name, value) {
-//   this.name = name;
-//   this.value = value;
-// }
 
 function submitHandlerCollege(event) {
   event.preventDefault();
   var nameArray = [event.target.educationPath, event.target.degreetype, event.target.maritalStatus, event.target.beliefs];
-  // var newData = new Nameobj('education', event.target.educationPath.value);
-  // console.log('newData :', newData);
   for (var i = 0; i < nameArray.length; i++) {
     var addArray = [];
     if (nameArray[i].name === undefined) {
@@ -231,11 +222,25 @@ function submitHandlerCollege(event) {
     collegeArray.push(addArray);
 
   }
-  // var inputName = collegeForm.getAttribute('name');
-  // var inputValue = inputName.getAttribute('value');
-  // nameArray.push(inputName, inputValue);
-
   console.log('collegeArray :', collegeArray);
+  event.target.reset();
+  // storageArray
+}
+
+function submitHandlerCareer(event) {
+  event.preventDefault();
+  var nameArray = [event.target.careerPath, event.target.adultHobbies, event.target.maritalStatusAdult, event.target.regionAsAdult];
+  for (var i = 0; i < nameArray.length; i++) {
+    var addArray = [];
+    if (nameArray[i].name === undefined) {
+      addArray.push(nameArray[i][1].name, nameArray[i].value);
+    } else {
+      addArray.push(nameArray[i].name, nameArray[i].value);
+    }
+    careerArray.push(addArray);
+
+  }
+  console.log('careerArray :', careerArray);
   event.target.reset();
   // storageArray
 }
@@ -246,3 +251,5 @@ collegeFormRender();
 var collegeForm = document.getElementById('college');
 collegeForm.addEventListener('submit', submitHandlerCollege);
 careerFormRender();
+var careerForm = document.getElementById('career');
+careerForm.addEventListener('submit', submitHandlerCareer);
