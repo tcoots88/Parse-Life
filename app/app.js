@@ -1,13 +1,18 @@
 'use strict';
 
+//Global Array for College Form
+var collegeArray = [];
+// var careerArray = [];
+// var storageArray = [];
+
 function collegeFormRender() {
 
   //Start of college form
   var collegeSection = document.getElementById('college');
   var collegeFormElem = document.createElement('form');
   collegeFormElem.id = 'stringify';
-  collegeFormElem.form = 'collegeQuestions';
   var collegeFeildSetElem = document.createElement('fieldset');
+  collegeFeildSetElem.id = 'collegeQuestions';
   var collegeLegendElem = document.createElement('legend');
   collegeLegendElem.textContent = 'Life as a Young Adult';
   collegeSection.appendChild(collegeFormElem);
@@ -22,10 +27,10 @@ function collegeFormRender() {
 
   var education = ['University', 'Technical School', 'Military', 'None'];
   var educationDropDownElem = document.createElement('select');
+  educationDropDownElem.name = 'educationpath';
   collegeFeildSetElem.appendChild(educationDropDownElem);
 
   for (var path = 0; path < education.length; path++) {
-    console.log('path :', path);
     var collegeOptionElem = document.createElement('option');
     collegeOptionElem.value = education[path];
     collegeOptionElem.textContent = education[path];
@@ -39,6 +44,7 @@ function collegeFormRender() {
 
   var degreeType = ['Science', 'Arts', 'Math', 'None'];
   var degreeDropDownElem = document.createElement('select');
+  degreeDropDownElem.name = 'degreetype';
   collegeFeildSetElem.appendChild(degreeDropDownElem);
 
   for (var family = 0; family < degreeType.length; family++) {
@@ -98,7 +104,8 @@ function collegeFormRender() {
   doesNotBelieve.value = 'no';
   beliefsQuestionFalse.appendChild(doesNotBelieve);
 
-  formSubmission(collegeFormElem.form, collegeFormElem);
+  formSubmission(collegeFormElem, 'collegeSubmit');
+
 }
 
 function careerFormRender() {
@@ -119,12 +126,11 @@ function careerFormRender() {
   careerPath.textContent = 'What career did you end up with?';
   careerFeildSetElem.appendChild(careerPath);
 
-  var career = ['Military', 'Buisness', 'Engineer', 'Finance'];
+  var career = ['Military', 'Buisness', 'Engineer', 'Finance', 'Skill Trade', 'Other'];
   var careerDropDownElem = document.createElement('select');
   careerFeildSetElem.appendChild(careerDropDownElem);
 
   for (var path = 0; path < career.length; path++) {
-    console.log('path :', path);
     var careerOptionElem = document.createElement('option');
     careerOptionElem.value = career[path];
     careerOptionElem.textContent = career[path];
@@ -136,30 +142,34 @@ function careerFormRender() {
   adultHobbiesQuestion.textContent = 'What hobbies do you partake in now?';
   careerFeildSetElem.appendChild(adultHobbiesQuestion);
 
-  var degreeType = ['Science', 'Arts', 'Math', 'None'];
-  var degreeDropDownElem = document.createElement('select');
-  careerFeildSetElem.appendChild(degreeDropDownElem);
+  var hobbiesAsAdultText = document.createElement('input');
+  hobbiesAsAdultText.type = 'text';
+  adultHobbiesQuestion.appendChild(hobbiesAsAdultText);
 
-  for (var family = 0; family < degreeType.length; family++) {
-    var degreeOptionElem = document.createElement('option');
-    degreeOptionElem.value = degreeType[family];
-    degreeOptionElem.textContent = degreeType[family];
-    degreeDropDownElem.appendChild(degreeOptionElem);
-  }
 
-  //Third Input - Marital Status
+  //Third Input - Marital Status As An Adult
   var maritalQuestion = document.createElement('p');
-  maritalQuestion.textContent = 'Are you married?';
+  maritalQuestion.textContent = 'Are you married with or without kids?';
   careerFeildSetElem.appendChild(maritalQuestion);
 
+  var maritalQuestionTrueWithKids = document.createElement('p');
+  maritalQuestionTrueWithKids.textContent = 'Yes w/ kids';
+  maritalQuestion.appendChild(maritalQuestionTrueWithKids);
+
+  var isMarriedWithKids = document.createElement('input');
+  isMarriedWithKids.type = 'radio';
+  isMarriedWithKids.name = 'maritalStatusAdult';
+  isMarriedWithKids.value = 'yesKids';
+  maritalQuestionTrueWithKids.appendChild(isMarriedWithKids);
+
   var maritalQuestionTrue = document.createElement('p');
-  maritalQuestionTrue.textContent = 'Yes';
+  maritalQuestionTrue.textContent = 'Yes w/o kids';
   maritalQuestion.appendChild(maritalQuestionTrue);
 
   var isMarried = document.createElement('input');
   isMarried.type = 'radio';
-  isMarried.name = 'maritalStatus';
-  isMarried.value = 'yes';
+  isMarried.name = 'maritalStatusAdult';
+  isMarried.value = 'yesNoKids';
   maritalQuestionTrue.appendChild(isMarried);
 
   var maritalQuestionFalse = document.createElement('p');
@@ -168,47 +178,66 @@ function careerFormRender() {
 
   var isNotMarried = document.createElement('input');
   isNotMarried.type = 'radio';
-  isNotMarried.name = 'maritalStatus';
+  isNotMarried.name = 'maritalStatusAdult';
   isNotMarried.value = 'no';
   maritalQuestionFalse.appendChild(isNotMarried);
 
-  //Fourth Input - Belief System
-  var beliefsQuestion = document.createElement('p');
-  beliefsQuestion.textContent = 'Do you have a belief system?';
-  careerFeildSetElem.appendChild(beliefsQuestion);
+  //Fourth Input - Region as An Adult
+  var regionAdultElement = document.createElement('p');
+  regionAdultElement.textContent = 'Current Region: ';
+  careerFeildSetElem.appendChild(regionAdultElement);
 
-  var beliefsQuestionTrue = document.createElement('p');
-  beliefsQuestionTrue.textContent = 'Yes';
-  beliefsQuestion.appendChild(beliefsQuestionTrue);
+  var regionAdultField = document.createElement('input');
+  regionAdultField.type = 'text';
 
-  var hasBeliefs = document.createElement('input');
-  hasBeliefs.type = 'radio';
-  hasBeliefs.name = 'beliefs';
-  hasBeliefs.value = 'yes';
-  beliefsQuestionTrue.appendChild(hasBeliefs);
+  regionAdultElement.appendChild(regionAdultField);
 
-  var beliefsQuestionFalse = document.createElement('p');
-  beliefsQuestionFalse.textContent = 'No';
-  beliefsQuestion.appendChild(beliefsQuestionFalse);
+  // var submitForm = document.createElement('button');
+  // submitForm.type = 'submit';
+  // submitForm.value = 'careerSubmit';
+  // submitForm.textContent = 'Continue';
+  // careerFeildSetElem.appendChild(submitForm);
 
-  var doesNotBelieve = document.createElement('input');
-  doesNotBelieve.type = 'radio';
-  doesNotBelieve.name = 'beliefs';
-  doesNotBelieve.value = 'no';
-  beliefsQuestionFalse.appendChild(doesNotBelieve);
+  formSubmission(careerFeildSetElem, 'careerSubmit');
 }
 
-function formSubmission(formName, formElem) {
+function formSubmission(formElem, formValue) {
   var submitForm = document.createElement('button');
   submitForm.type = 'submit';
-  submitForm.value = 'Submit';
+  submitForm.value = formValue;
   submitForm.textContent = 'Continue';
   formElem.appendChild(submitForm);
+}
+
+function Nameobj(name, value) {
+  this.name = name;
+  this.value = value;
+}
+
+function submitHandlerCollege(event) {
+  event.preventDefault();
+  console.log('event.target.id :', event.target.id);
+  // var collegeForm = document.getElementById('college');
+  // var nameArray = ['educationpath', 'degreetype', 'maritalStatus', 'belief'];
+  var newData = new Nameobj('education', event.target.educationPath.value);
+  console.log('newData :', newData);
+  // for ( var i = 0; i < nameArray.length; i++) {
+  collegeArray.push(newData);
+
+  // }
+  // var inputName = collegeForm.getAttribute('name');
+  // var inputValue = inputName.getAttribute('value');
+  // nameArray.push(inputName, inputValue);
+
+  console.log('collegeArray :', collegeArray);
+  event.target.reset();
+
+  // storageArray
 }
 
 
 
 collegeFormRender();
-//Submit button for form
-
+var collegeForm = document.getElementById('collegeQuestions');
+collegeForm.addEventListener('submit', submitHandlerCollege);
 careerFormRender();
