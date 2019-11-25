@@ -218,27 +218,25 @@ function formSubmission(formElem, formValue) {
 
 function submitHandlerCollege(event) {
   event.preventDefault();
-  console.log('event.target :', event.target);
-  console.log('event.target.id :', event.target.id);
-  console.log('event.target.educationPath.value :', event.target.educationPath.value);
-  console.log('event.target.degreetype.value :', event.target.degreetype.value);
-  console.log('event.target.maritalStatus.value :', event.target.maritalStatus.value);
-  console.log('event.target.belief.value :', event.target.beliefs.value);
-
-  // var nameArray = ['educationpath', 'degreetype', 'maritalStatus', 'belief'];
+  var nameArray = [event.target.educationPath, event.target.degreetype, event.target.maritalStatus, event.target.beliefs];
   // var newData = new Nameobj('education', event.target.educationPath.value);
   // console.log('newData :', newData);
-  // for ( var i = 0; i < nameArray.length; i++) {
-  // collegeArray.push(newData);
+  for (var i = 0; i < nameArray.length; i++) {
+    var addArray = [];
+    if (nameArray[i].name === undefined) {
+      addArray.push(nameArray[i][1].name, nameArray[i].value);
+    } else {
+      addArray.push(nameArray[i].name, nameArray[i].value);
+    }
+    collegeArray.push(addArray);
 
-  // }
+  }
   // var inputName = collegeForm.getAttribute('name');
   // var inputValue = inputName.getAttribute('value');
   // nameArray.push(inputName, inputValue);
 
   console.log('collegeArray :', collegeArray);
   event.target.reset();
-
   // storageArray
 }
 
