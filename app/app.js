@@ -2,18 +2,18 @@
 
 function collegeFormRender() {
 
-  //All the element variables
+  //Start of college form
   var collegeSection = document.getElementById('college');
   var collegeFormElem = document.createElement('form');
-  var collegeFeildSetElem = document.createElement('fieldset');
-  var collegeLegendElem = document.createElement('legend');
-  // var collegeLabelElem = document.createElement('label');
-  collegeSection.appendChild(collegeFormElem);
   collegeFormElem.id = 'stringify';
   collegeFormElem.form = 'collegeQuestions';
+  var collegeFeildSetElem = document.createElement('fieldset');
+  var collegeLegendElem = document.createElement('legend');
+  collegeLegendElem.textContent = 'Life as a Young Adult';
+  collegeSection.appendChild(collegeFormElem);
   collegeFormElem.appendChild(collegeFeildSetElem);
   collegeFeildSetElem.appendChild(collegeLegendElem);
-  collegeLegendElem.textContent = 'Life as a Young Adult';
+
 
   //First Input-Education Path
   var educationPath = document.createElement('p');
@@ -34,7 +34,7 @@ function collegeFormRender() {
 
   //Second Input - Degree Family
   var degreeFamilyQuestion = document.createElement('p');
-  degreeFamilyQuestion.textContent = 'What educational path did you take?';
+  degreeFamilyQuestion.textContent = 'What family of degrees do you classify?';
   collegeFeildSetElem.appendChild(degreeFamilyQuestion);
 
   var degreeType = ['Science', 'Arts', 'Math', 'None'];
@@ -98,14 +98,7 @@ function collegeFormRender() {
   doesNotBelieve.value = 'no';
   beliefsQuestionFalse.appendChild(doesNotBelieve);
 
-
-  //Submit button for form
-  var submitCollegeForm = document.createElement('button');
-  submitCollegeForm.type = 'submit';
-  submitCollegeForm.value = 'Submit';
-  submitCollegeForm.form = 'collegeQeustions',
-  submitCollegeForm.textContent = 'Continue';
-  collegeFeildSetElem.appendChild(submitCollegeForm);
+  formSubmission(collegeFormElem.form, collegeFormElem);
 }
 
 function careerFormRender() {
@@ -205,7 +198,17 @@ function careerFormRender() {
   beliefsQuestionFalse.appendChild(doesNotBelieve);
 }
 
+function formSubmission(formName, formElem) {
+  var submitForm = document.createElement('button');
+  submitForm.type = 'submit';
+  submitForm.value = 'Submit';
+  submitForm.textContent = 'Continue';
+  formElem.appendChild(submitForm);
+}
+
 
 
 collegeFormRender();
+//Submit button for form
+
 careerFormRender();
