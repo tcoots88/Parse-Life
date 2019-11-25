@@ -194,4 +194,14 @@ form{
 h2{
     font-size: x-large;
 }
+<<<<<<< HEAD
 >>>>>>> forms completed
+=======
+
+button{
+    width: 75px;
+    height: 20px;
+    z-index: -1;
+    background-color: #4CAF50;
+}
+>>>>>>> commit of fully functioning forms
