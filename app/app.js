@@ -27,8 +27,9 @@ function collegeFormRender() {
 
   var education = ['University', 'Technical School', 'Military', 'None'];
   var educationDropDownElem = document.createElement('select');
-  educationDropDownElem.name = 'educationpath';
-  collegeFeildSetElem.appendChild(educationDropDownElem);
+  educationDropDownElem.name = 'educationPath';
+  educationPath.appendChild(educationDropDownElem);
+
 
   for (var path = 0; path < education.length; path++) {
     var collegeOptionElem = document.createElement('option');
@@ -45,10 +46,11 @@ function collegeFormRender() {
   var degreeType = ['Science', 'Arts', 'Math', 'None'];
   var degreeDropDownElem = document.createElement('select');
   degreeDropDownElem.name = 'degreetype';
-  collegeFeildSetElem.appendChild(degreeDropDownElem);
+  degreeFamilyQuestion.appendChild(degreeDropDownElem);
 
   for (var family = 0; family < degreeType.length; family++) {
     var degreeOptionElem = document.createElement('option');
+    degreeOptionElem.name = 'degreetype';
     degreeOptionElem.value = degreeType[family];
     degreeOptionElem.textContent = degreeType[family];
     degreeDropDownElem.appendChild(degreeOptionElem);
@@ -209,20 +211,25 @@ function formSubmission(formElem, formValue) {
   formElem.appendChild(submitForm);
 }
 
-function Nameobj(name, value) {
-  this.name = name;
-  this.value = value;
-}
+// function Nameobj(name, value) {
+//   this.name = name;
+//   this.value = value;
+// }
 
 function submitHandlerCollege(event) {
   event.preventDefault();
+  console.log('event.target :', event.target);
   console.log('event.target.id :', event.target.id);
-  // var collegeForm = document.getElementById('college');
+  console.log('event.target.educationPath.value :', event.target.educationPath.value);
+  console.log('event.target.degreetype.value :', event.target.degreetype.value);
+  console.log('event.target.maritalStatus.value :', event.target.maritalStatus.value);
+  console.log('event.target.belief.value :', event.target.beliefs.value);
+
   // var nameArray = ['educationpath', 'degreetype', 'maritalStatus', 'belief'];
-  var newData = new Nameobj('education', event.target.educationPath.value);
-  console.log('newData :', newData);
+  // var newData = new Nameobj('education', event.target.educationPath.value);
+  // console.log('newData :', newData);
   // for ( var i = 0; i < nameArray.length; i++) {
-  collegeArray.push(newData);
+  // collegeArray.push(newData);
 
   // }
   // var inputName = collegeForm.getAttribute('name');
@@ -238,6 +245,6 @@ function submitHandlerCollege(event) {
 
 
 collegeFormRender();
-var collegeForm = document.getElementById('collegeQuestions');
+var collegeForm = document.getElementById('college');
 collegeForm.addEventListener('submit', submitHandlerCollege);
 careerFormRender();
