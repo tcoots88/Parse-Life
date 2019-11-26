@@ -38,7 +38,9 @@ select {
   outline-color: rgb(184, 207, 149);
 }
 
-
+body {
+  overflow: hidden;
+}
 
 /*
 html {
