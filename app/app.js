@@ -171,6 +171,8 @@ function submitHandlerHighSchool(event) {
 
 
 
+
+
 hsFormRender();
 var hsForm = document.getElementById('hs');
 hsForm.addEventListener('submit', submitHandlerHighSchool);
