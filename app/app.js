@@ -44,7 +44,7 @@ nameField.type = 'text';
 nameField.name = 'birthNameFieldValue';
 
 birthName.appendChild(nameField);
-//--------------------------------------------- Input 3 ------------------------------------
+//--------------------------------------------- Input 3 -----------------------------------
 
 var birthGender = document.createElement('p');
 birthGender.textContent = 'Birth gender: ';
