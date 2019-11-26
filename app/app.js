@@ -1,11 +1,4 @@
 'use strict';
-<<<<<<< HEAD
-
-var hsGlobalArray = [];
-
-
-=======
->>>>>>> 7cc27b0b84d087fa320e87289c0352667c3b7cbf
 
 var hsGlobalArray = [];
 
@@ -14,11 +7,6 @@ var hsGlobalArray = [];
 
 function hsFormRender() {
 
-<<<<<<< HEAD
-function hsFormRender() {
-
-=======
->>>>>>> 7cc27b0b84d087fa320e87289c0352667c3b7cbf
   //  switched variables to global
   var hsSection = document.getElementById('hs');
   var hsFormElem = document.createElement('form');
@@ -182,12 +170,6 @@ function submitHandlerHighSchool(event) {
 }
 
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 7cc27b0b84d087fa320e87289c0352667c3b7cbf
 hsFormRender();
 var hsForm = document.getElementById('hs');
 hsForm.addEventListener('submit', submitHandlerHighSchool);
