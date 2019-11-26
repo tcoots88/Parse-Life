@@ -93,6 +93,7 @@ function submitHandlerElementary(event) {
 
   }
   event.target.reset();
+  scrollToHash('college');
 }
 
 createElementaryForm();
@@ -839,4 +840,6 @@ deathForm.addEventListener('submit', deathHandler);
 
 //
 
-// function
+function scrollToHash(hash) {
+  location.hash = '#' + hash;
+}
