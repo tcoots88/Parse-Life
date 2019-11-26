@@ -1,19 +1,26 @@
 'use strict';
+
+var hsGlobalArray = [];
+
+
+
+
 function hsFormRender() {
 
-
+  //  switched variables to global
   var hsSection = document.getElementById('hs');
   var hsFormElem = document.createElement('form');
+  hsFormElem.id = 'stringify';
   var hsFieldSetElem = document.createElement('fieldset');
   var hsLegendElem = document.createElement('legend');
-
+  hsLegendElem.textContent = 'Life as a High School Student';
   hsSection.appendChild(hsFormElem);
-  hsFormElem.id = 'stringify';
-  hsFormElem.form = 'hsQuestions';
   hsFormElem.appendChild(hsFieldSetElem);
   hsFieldSetElem.appendChild(hsLegendElem);
-  hsLegendElem.textContent = 'Life as a High School Student';
 
+  // hsFormElem.form = 'hsQuestions';
+
+  // hsLegendElem.textContent = 'Life as a High School Student';
 
   // Cliques Question
   var hsCliqueMember = document.createElement('p');
@@ -22,6 +29,7 @@ function hsFormRender() {
 
   var hsCliqueArray = ['Populars', 'Jocks', 'Good-Ats', 'Hipsters', 'The Brains', 'Normals', 'Stoners', 'Emos/Goths', 'Anime/Manga Fans', 'Loners', 'None of the above'];
   var cliqueDropDownElem = document.createElement('select');
+  cliqueDropDownElem.name = 'hsCliqueMember';
   hsFieldSetElem.appendChild(cliqueDropDownElem);
 
   for (var path = 0; path < hsCliqueArray.length; path++) {
@@ -39,10 +47,12 @@ function hsFormRender() {
 
   var hsActivityArray = ['Student Government', 'Academic Team', 'Debate Form', 'Debate Team', 'Arts', 'Job', 'Athletics', 'None of the above'];
   var activityDropDownElem = document.createElement('select');
+  activityDropDownElem.name = 'hsECActivity';
   hsFieldSetElem.appendChild(activityDropDownElem);
 
   for (var activity = 0; activity < hsActivityArray.length; activity++) {
     var activityOptionElem = document.createElement('option');
+    activityOptionElem.name = 'hsECActivity';
     activityOptionElem.value = hsActivityArray[activity];
     activityOptionElem.textContent = hsActivityArray[activity];
     activityDropDownElem.appendChild(activityOptionElem);
@@ -124,15 +134,42 @@ function hsFormRender() {
   noDiploma.value = 'no';
   hsDiplomaQuestionFalse.appendChild(noDiploma);
 
-
-
-  //Submit button for form
-  var submitHighSchoolForm = document.createElement('button');
-  submitHighSchoolForm.type = 'submit';
-  submitHighSchoolForm.value = 'SubmitHS';
-  submitHighSchoolForm.form = 'hsQuestions';
-  submitHighSchoolForm.textContent = 'Continue';
-  hsFieldSetElem.appendChild(submitHighSchoolForm);
+  submitHighSchoolForm(hsFieldSetElem, 'hsSubmit');
 }
 
+
+
+
+
+//Submit button for form
+function submitHighSchoolForm(formElem, formValue) {
+  var submitHighSchoolForm = document.createElement('button');
+  submitHighSchoolForm.type = 'submit';
+  submitHighSchoolForm.value = formValue;
+  submitHighSchoolForm.textContent = 'Continue';
+  formElem.appendChild(submitHighSchoolForm);
+}
+
+
+function submitHandlerHighSchool(event) {
+  event.preventDefault();
+  var nameArray = [event.target.hsCliqueMember, event.target.hsECActivity, event.target.learnedLanguage, event.target.relationship, event.target.diploma];
+  for (var i = 0; i < nameArray.length; i++) {
+    var addArray = [];
+    if (nameArray[i].name === undefined) {
+      addArray.push(nameArray[i][1].name, nameArray[i].value);
+    } else {
+      addArray.push(nameArray[i].name, nameArray[i].value);
+    }
+    hsGlobalArray.push(addArray);
+
+  }
+  console.log('hsGlobalArray: ', hsGlobalArray);
+  event.target.reset();
+
+}
+
+
 hsFormRender();
+var hsForm = document.getElementById('hs');
+hsForm.addEventListener('submit', submitHandlerHighSchool);
