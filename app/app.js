@@ -14,6 +14,7 @@ function hsFormRender() {
   hsFieldSetElem.appendChild(hsLegendElem);
   hsLegendElem.textContent = 'Life as a High School Student';
 
+
   // Cliques Question
   var hsCliqueMember = document.createElement('p');
   hsCliqueMember.textContent = 'Which clique did you belong to?';
