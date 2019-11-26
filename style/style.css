@@ -89,4 +89,153 @@ span {
 }
 #Turret {
   font-family: 'Turret Road', cursive;
+}
 
+
+
+
+
+
+
+
+
+@keyframes bounce {
+  0%
+  {
+    transform: translateY(-10px);
+  }
+  20%
+  {
+    transform: translateY(0px);
+  }
+  30%
+  {
+    transform: translateY(-7px);
+  }
+  50%
+  {
+    transform: translateY(0px);
+  }
+  65%
+  {
+    transform: translateY(-5px);
+  }
+  75%
+  {
+    transform: translateY(0px);
+  }
+  85%
+  {
+    transform: translateY(-2px);
+  }
+  100%
+  {
+    transform: translateY(0px);
+  }
+}
+.bouncing {
+  animation                : bounce linear 1s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+
+}
+
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3em;
+  color: greenyellow;
+  background: #111111;
+  text-align: center;
+  padding: 100px;
+}
+
+.loading 
+  
+  .one {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.0s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.1s;
+  }
+
+  .two {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.2s;
+      animation: dot 1.3s infinite;
+      animation-delay: 0.2s;
+  }
+
+  .three {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.3s;
+     animation: dot 1.3s infinite;
+     animation-delay: 0.3s;
+  }
+  
+
+
+@-webkit-keyframes dot {
+      0% { opacity: 0; }
+     50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes dot {
+      0% { opacity: 0; }
+     50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+article p{
+    display: inline;
+    margin: 0;
+}
+
+#seasonID{
+    width: 100px;
+}
+
+input{
+    background-color: lightgray;
+    margin: 15px;
+}
+
+select{
+    background-color: lightgray;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0px;
+    font-size: 16px;
+    border-block-end-style: ridge;
+    cursor: pointer;
+    
+}
+
+form{
+    border-color: dimgrey;
+    width: 500px;
+    height:auto;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+h2{
+    font-size: x-large;
+}
+
+button{
+    width: 75px;
+    height: 20px;
+    z-index: -1;
+    background-color: #4CAF50;
+}
+*/
