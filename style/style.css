@@ -1,0 +1,92 @@
+
+
+.form {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  background-color: black;
+  color: greenyellow;
+};
+
+select {
+  width: 200px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  color: greenyellow;
+  background-color: black;
+
+}
+
+
+select {
+  appearance: none;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  width: 250px;
+  color: greenyellow;
+  background-color: black;
+  font-size: 16px;
+}
+
+.inputField {
+  appearance: none;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  font-size: 16px;
+  width: 250px;
+  color: greenyellow;
+  background-color: black;
+  outline-color: rgb(184, 207, 149);
+}
+
+
+
+/*
+html {
+  background-color: black;
+  font-family     : "Times New Roman", Times, serif;
+  font-size       : 1.5em;
+  color           : greenyellow;
+}
+
+.wrapper {
+  display        : flex;
+  justify-content: space-evenly;
+  align-items    : flex-end;
+  padding        : 0.5em 1em 0.5em 1em;
+}
+
+.text {
+  margin     : 0;
+  line-height: 0.55;
+}
+
+span {
+  display: inline-block;
+}
+
+#B612 {
+  font-family: 'B612 Mono', monospace;
+}
+
+#Cutive {
+  font-family: 'Cutive Mono', monospace;
+}
+
+#Gruppo {
+  font-family: 'Gruppo', cursive;
+}
+#Life {
+  font-family: 'Life Savers', cursive;
+}
+#Oxygen {
+  font-family: 'Oxygen Mono', monospace;
+}
+#PT {
+  font-family: 'PT Mono', monospace;
+}
+#Press {
+  font-family: 'Press Start 2P', cursive;
+}
+#Turret {
+  font-family: 'Turret Road', cursive;
+}
