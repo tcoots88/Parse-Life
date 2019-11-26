@@ -1,19 +1,38 @@
-#Elementary {
+.form {
   font-family: 'Inconsolata', monospace;
   font-weight: bold;
   background-color: black;
   color: greenyellow;
 };
 
-#Elementary select {
+select {
   width: 200px;
   font-family: 'Inconsolata', monospace;
   font-weight: bold;
   color: greenyellow;
   background-color: black;
 
-};
-
-.radio {
- display: block;
 }
+
+
+select {
+  appearance: none;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  width: 250px;
+  color: greenyellow;
+  background-color: black;
+  font-size: 16px;
+}
+
+.inputField {
+  appearance: none;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  font-size: 16px;
+  width: 250px;
+  color: greenyellow;
+  background-color: black;
+  outline-color: rgb(184, 207, 149);
+}
+
