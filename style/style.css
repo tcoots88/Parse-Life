@@ -1,4 +1,46 @@
-/* 
+
+
+.form {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  background-color: black;
+  color: greenyellow;
+};
+
+select {
+  width: 200px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  color: greenyellow;
+  background-color: black;
+
+}
+
+
+select {
+  appearance: none;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  width: 250px;
+  color: greenyellow;
+  background-color: black;
+  font-size: 16px;
+}
+
+.inputField {
+  appearance: none;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  font-size: 16px;
+  width: 250px;
+  color: greenyellow;
+  background-color: black;
+  outline-color: rgb(184, 207, 149);
+}
+
+
+
+/*
 html {
   background-color: black;
   font-family     : "Times New Roman", Times, serif;
@@ -95,7 +137,7 @@ span {
   animation                : bounce linear 1s;
   animation-iteration-count: 1;
   animation-direction: alternate;
- 
+
 }
 
 
@@ -196,4 +238,4 @@ button{
     z-index: -1;
     background-color: #4CAF50;
 }
- */
+*/
