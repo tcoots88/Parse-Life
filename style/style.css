@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 html {
   background-color: black;
   font-family     : "Times New Roman", Times, serif;
@@ -152,7 +151,7 @@ body {
      50% { opacity: 0; }
     100% { opacity: 1; }
 }
-=======
+
 article p{
     display: inline;
     margin: 0;
@@ -194,9 +193,6 @@ form{
 h2{
     font-size: x-large;
 }
-<<<<<<< HEAD
->>>>>>> forms completed
-=======
 
 button{
     width: 75px;
@@ -204,4 +200,4 @@ button{
     z-index: -1;
     background-color: #4CAF50;
 }
->>>>>>> commit of fully functioning forms
+
