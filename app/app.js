@@ -26,6 +26,7 @@ var seasonArray = ['Spring', 'Summer', 'Fall', 'Winter'];
 var seasonChoice = document.createElement('select');
 seasonChoice.id = 'seasonID';
 seasonChoice.name = 'seasonDDValue';
+seasonChoice.required = true;
 birthSeason.appendChild(seasonChoice);
 
 for(var season = 0; season < seasonArray.length; season++){
@@ -42,9 +43,10 @@ birthFieldset.appendChild(birthName);
 var nameField = document.createElement('input');
 nameField.type = 'text';
 nameField.name = 'birthNameFieldValue';
+nameField.required = true;
 
 birthName.appendChild(nameField);
-//--------------------------------------------- Input 3 ------------------------------------
+//--------------------------------------------- Input 3 -----------------------------------
 
 var birthGender = document.createElement('p');
 birthGender.textContent = 'Birth gender: ';
@@ -55,6 +57,8 @@ var genderArray = ['Male', 'Female', 'Non-Binary'];
 var genderChoice = document.createElement('select');
 genderChoice.id = 'genderID';
 genderChoice.name = 'genderDDValue';
+genderChoice.required = true;
+
 birthGender.appendChild(genderChoice);
 
 for(var gender = 0; gender < genderArray.length; gender++){
@@ -64,41 +68,6 @@ for(var gender = 0; gender < genderArray.length; gender++){
     genderChoice.appendChild(option);
 }
 
-
-// var maleGenderElement = document.createElement('p');
-// maleGenderElement.textContent = 'Male';
-// var genderElementArticle = document.createElement('article');
-// genderElementArticle.textContent = 'Gender: ';
-
-// var male = document.createElement('input');
-// male.type = 'radio';
-// male.name = 'gender';
-// male.value = 'male';
-// maleGenderElement.appendChild(male);
-
-// var femaleGenderElement = document.createElement('p');
-// femaleGenderElement.textContent = 'Female';
-
-// var female = document.createElement('input');
-// female.type = 'radio';
-// female.name = 'gender';
-// female.value = 'female';
-// femaleGenderElement.appendChild(female);
-
-// var nonBinaryGenderElement = document.createElement('p');
-// nonBinaryGenderElement.textContent = 'Non-Binary';
-
-// var nonBinary = document.createElement('input');
-// nonBinary.type = 'radio';
-// nonBinary.name = 'gender';
-// nonBinary.value = 'non binary';
-// nonBinaryGenderElement.appendChild(nonBinary);
-
-
-// birthFieldset.appendChild(genderElementArticle);
-// genderElementArticle.appendChild(maleGenderElement);
-// genderElementArticle.appendChild(femaleGenderElement);
-// genderElementArticle.appendChild(nonBinaryGenderElement);
 //---------------------------------------------- Input 4 ---------------------------------------
 var regionElement = document.createElement('p');
 regionElement.textContent = 'Region of Birth: ';
@@ -107,6 +76,7 @@ birthFieldset.appendChild(regionElement);
 var regionField = document.createElement('input');
 regionField.type = 'text';
 regionField.name = 'regionFieldValue';
+regionField.required = true;
 
 regionElement.appendChild(regionField);
 
@@ -146,8 +116,10 @@ deadFieldset.appendChild(deathCeremonyType);
 
 var burialArray = ['Incineration ', 'Burial', 'Tree Pod', 'Mummification'];
 var burialChoice = document.createElement('select');
-deathCeremonyType.appendChild(burialChoice);
 burialChoice.name = 'burialDDValue';
+burialChoice.required = true;
+deathCeremonyType.appendChild(burialChoice);
+
 
 for(var buryType = 0; buryType < burialArray.length; buryType++){
     var buryOption = document.createElement('option');
@@ -163,6 +135,7 @@ deadFieldset.appendChild(retirementDestination);
 var retirementField = document.createElement('input');
 retirementField.type = 'text';
 retirementField.name = 'retirementFieldValue';
+retirementField.required = true;
 
 retirementDestination.appendChild(retirementField);
 //--------------------------------------------- Input 3 ------------------------------------
@@ -175,6 +148,7 @@ var bucketArray = ['Yes', 'No', 'Not-Yet'];
 var bucketSelection = document.createElement('select');
 bucketSelection.id = 'bucketID';
 bucketSelection.name = 'bucketDDValue';
+bucketSelection.required = true;
 bucketList.appendChild(bucketSelection);
 
 for(var bucketOption = 0; bucketOption < bucketArray.length; bucketOption++){
@@ -184,31 +158,6 @@ for(var bucketOption = 0; bucketOption < bucketArray.length; bucketOption++){
     bucketSelection.appendChild(dropOption);
 }
 
-
-// var  bucketArticle = document.createElement('article');
-// bucketArticle.id = 'bucketArticleElement';
-// bucketArticle.textContent = 'Have a bucket list completed? ';
-// var yesBucketElement = document.createElement('p');
-// yesBucketElement.textContent = 'Yes: ';
-
-// var yesRadio = document.createElement('input');
-// yesRadio.type = 'radio';
-// yesRadio.name = 'bucket';
-// yesRadio.value = 'yes';
-// yesBucketElement.appendChild(yesRadio);
-
-// var noBucketElement = document.createElement('p');
-// noBucketElement.textContent = 'No: ';
-
-// var noRadio = document.createElement('input');
-// noRadio.type = 'radio';
-// noRadio.name = 'bucket';
-// noRadio.value = 'no';
-// noBucketElement.appendChild(noRadio);
-
-// deadFieldset.appendChild(bucketArticle);
-// bucketArticle.appendChild(yesBucketElement);
-// bucketArticle.appendChild(noBucketElement);
 //---------------------------------------------- Input 4 ---------------------------------------
 var fullfillmentArticle = document.createElement('article');
 fullfillmentArticle.textContent = 'What will provide you fullfillment? ';
