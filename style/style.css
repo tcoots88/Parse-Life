@@ -1,3 +1,4 @@
+/* 
 html {
   background-color: black;
   font-family     : "Times New Roman", Times, serif;
@@ -54,11 +55,7 @@ span {
 
 
 
-/* .stack {
-  display: block;
-} */
 
-/*  Bouncing Animation */
 
 @keyframes bounce {
   0%
@@ -98,8 +95,7 @@ span {
   animation                : bounce linear 1s;
   animation-iteration-count: 1;
   animation-direction: alternate;
-  /* animation-timing-function:cubic-bezier(1, 0.75, 0.5, 0); */
-  /* animation-duration: 3s; */
+ 
 }
 
 
@@ -200,4 +196,4 @@ button{
     z-index: -1;
     background-color: #4CAF50;
 }
-
+ */
