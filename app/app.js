@@ -108,7 +108,7 @@ elementaryForm.addEventListener('submit', submitHandlerElementary);
 //Global Array for College Form
 var collegeArray = [];
 var careerArray = [];
-// var storageArray = [];
+var storageArray = [];
 
 function collegeFormRender() {
 
@@ -328,8 +328,17 @@ function submitHandlerCollege(event) {
 
   }
   console.log('collegeArray :', collegeArray);
+
+
   event.target.reset();
-  // storageArray
+  storageArray.push(birthGlobalArray);
+  console.log('storageArray :', storageArray);
+  storageArray.push(elementaryFormDataArray);
+  console.log('storageArray :', storageArray);
+  storageArray.push(collegeArray);
+  console.log('storageArray :', storageArray);
+  localStorage.userData = JSON.stringify(storageArray);
+
 }
 
 function submitHandlerCareer(event) {
