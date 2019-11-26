@@ -512,11 +512,9 @@ function submitHandlerCollege(event) {
 
   event.target.reset();
   storageArray.push(birthGlobalArray);
-  console.log('storageArray :', storageArray);
   storageArray.push(elementaryFormDataArray);
-  console.log('storageArray :', storageArray);
+  storageArray.push(hsGlobalArray);
   storageArray.push(collegeArray);
-  console.log('storageArray :', storageArray);
   localStorage.userData = JSON.stringify(storageArray);
 
 }
