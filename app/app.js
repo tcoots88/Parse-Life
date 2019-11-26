@@ -115,6 +115,7 @@ var careerArray = [];
 var storageArray = [];
 
 
+
 function hsFormRender() {
 
   //  switched variables to global
