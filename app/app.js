@@ -63,8 +63,6 @@ var createElementaryForm = function () {
   questionFour.appendChild(questionFourField);
   questionFourField.type = 'text'
   questionFourField.value = ''
-
-
 }
 
 
