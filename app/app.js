@@ -92,9 +92,9 @@ function submitHandlerElementary(event) {
     elementaryFormDataArray.push(addArray);
 
   }
-  renderCycle("elementary", "elementaryResult");
+  renderCycle('elementary', 'elementaryResult');
   event.target.reset();
-  scrollToHash('elementaryResult');
+  scrollToNextDiv('elementaryResult');
 }
 
 createElementaryForm();
@@ -284,11 +284,9 @@ function submitHandlerHighSchool(event) {
     hsGlobalArray.push(addArray);
 
   }
-  renderCycle("highschool", "highschoolResult");
+  renderCycle('highschool', 'highschoolResult');
   event.target.reset();
-  scrollToHash('highschoolResult');
-  
-
+  scrollToNextDiv('highschoolResult');
 }
 
 
@@ -528,16 +526,16 @@ function submitHandlerCollege(event) {
   }
   console.log('collegeArray :', collegeArray);
 
-  
-  
+
+
   storageArray.push(birthGlobalArray);
   storageArray.push(elementaryFormDataArray);
   storageArray.push(hsGlobalArray);
   storageArray.push(collegeArray);
   localStorage.userData = JSON.stringify(storageArray);
-  renderCycle("college", "collegeResult");
+  renderCycle('college', 'collegeResult');
   event.target.reset();
-  scrollToHash('collegeResult');
+  scrollToNextDiv('collegeResult');
 
 }
 
@@ -555,9 +553,9 @@ function submitHandlerCareer(event) {
 
   }
   console.log('careerArray :', careerArray);
-  renderCycle("career", "careerResult");
+  renderCycle('career', 'careerResult');
   event.target.reset();
-  scrollToHash('careerResult');
+  scrollToNextDiv('careerResult');
 
   // storageArray
 }
@@ -792,7 +790,7 @@ function birthHandler(event) {
 
   event.target.reset();
 
-  renderCycle("birthExplanation", birth)
+  renderCycle('birth', 'birthResult');
 
 }
 
@@ -814,12 +812,9 @@ function deathHandler(event) {
   console.log(bucketDropDownValue);
   console.log(fullfillmentCheck);
 
-  renderCycle("death", "deathResult");
+  renderCycle('death', 'deathResult');
   event.target.reset();
-  scrollToHash('deathResult');
-
-
-  renderCycle("birthResult", birth)
+  scrollToNextDiv('deathResult');
 }
 
 document.getElementById('financialID').onclick = checkBoxCheck;
@@ -856,10 +851,10 @@ deathForm.appendChild(deathSubmitButton);
 deathForm.addEventListener('submit', deathHandler);
 
 var renderCycle = function (cycle, parentElem) {
-  var getParentElem = document.getElementById(parentElem)
-  var createImage = document.createElement('img')
-  getParentElem.appendChild(createImage)
-  createImage.src = `images/${cycle}.png`
+  var getParentElem = document.getElementById(parentElem);
+  var createImage = document.createElement('img');
+  getParentElem.appendChild(createImage);
+  createImage.src = `images/${cycle}.png`;
 };
 
 
@@ -867,6 +862,6 @@ var renderCycle = function (cycle, parentElem) {
 
 
 
-function scrollToHash(hash) {
+function scrollToNextDiv(hash) {
   location.hash = '#' + hash;
 }
