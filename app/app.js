@@ -778,9 +778,9 @@ function birthHandler(event) {
   console.log(genderDropDownValue);
   console.log(regionText);
 
-  event.target.reset();
-
   renderCycle('birth', 'birthResult');
+  event.target.reset();
+  scrollToNextDiv('birthResult');
 
 }
 
