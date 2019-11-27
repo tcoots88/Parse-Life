@@ -778,9 +778,9 @@ function birthHandler(event) {
   console.log(genderDropDownValue);
   console.log(regionText);
 
-  event.target.reset();
-
   renderCycle('birth', 'birthResult');
+  event.target.reset();
+  scrollToNextDiv('birthResult');
 
 }
 
@@ -846,8 +846,68 @@ var renderCycle = function (cycle, parentElem) {
   getParentElem.appendChild(createImage);
   createImage.src = `images/${cycle}.png`;
   createImage.setAttribute('class', 'resultImg');
+  createImage.id = `${cycle}Img`;
 };
 
+var birthResultDiv = document.getElementById('birthResult');
+birthResultDiv.addEventListener('click', scrollingEvent);
+var LoadingOneDiv = document.getElementById('LoadingOne');
+LoadingOneDiv.addEventListener('click', scrollingEvent);
+var elementaryResultDiv = document.getElementById('elementaryResult');
+elementaryResultDiv.addEventListener('click', scrollingEvent);
+var LoadingTwoDiv = document.getElementById('LoadingTwo');
+LoadingTwoDiv.addEventListener('click', scrollingEvent);
+var highschoolResultDiv = document.getElementById('highschoolResult');
+highschoolResultDiv.addEventListener('click', scrollingEvent);
+var LoadingThreeDiv = document.getElementById('LoadingThree');
+LoadingThreeDiv.addEventListener('click', scrollingEvent);
+var collegeResultDiv = document.getElementById('collegeResult');
+collegeResultDiv.addEventListener('click', scrollingEvent);
+var LoadingFourDiv = document.getElementById('LoadingFour');
+LoadingFourDiv.addEventListener('click', scrollingEvent);
+var careerResultDiv = document.getElementById('careerResult');
+careerResultDiv.addEventListener('click', scrollingEvent);
+var LoadingFiveDiv = document.getElementById('LoadingFive');
+LoadingFiveDiv.addEventListener('click', scrollingEvent);
+
+
+function scrollingEvent(event) {
+  console.log('event.target :', event.target.id);
+  switch (event.target.id) {
+  case 'birthImg':
+    scrollToNextDiv('LoadingOne');
+    break;
+  case 'LoadingOne':
+    scrollToNextDiv('elementary');
+    break;
+  case 'elementaryImg':
+    scrollToNextDiv('LoadingTwo');
+    break;
+  case 'LoadingTwo':
+    scrollToNextDiv('hs');
+    break;
+  case 'highschoolImg':
+    scrollToNextDiv('LoadingThree');
+    break;
+  case 'LoadingThree':
+    scrollToNextDiv('college');
+    break;
+  case 'collegeImg':
+    scrollToNextDiv('LoadingFour');
+    break;
+  case 'LoadingFour':
+    scrollToNextDiv('career');
+    break;
+  case 'careerImg':
+    scrollToNextDiv('LoadingFive');
+    break;
+  case 'LoadingFive':
+    scrollToNextDiv('death');
+    break;
+  }
+
+
+}
 
 
 
