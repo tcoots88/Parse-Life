@@ -853,8 +853,10 @@ deathForm.addEventListener('submit', deathHandler);
 var renderCycle = function (cycle, parentElem) {
   var getParentElem = document.getElementById(parentElem);
   var createImage = document.createElement('img');
-  getParentElem.appendChild(createImage);
+  createImage.setAttribute('class', 'resultImg');
   createImage.src = `images/${cycle}.png`;
+  getParentElem.appendChild(createImage);
+
 };
 
 
