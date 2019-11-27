@@ -528,15 +528,16 @@ function submitHandlerCollege(event) {
   }
   console.log('collegeArray :', collegeArray);
 
-  renderCycle("college", "collegeResult");
-  event.target.reset();
-  scrollToHash('collegeResult');
-  event.target.reset();
+  
+  
   storageArray.push(birthGlobalArray);
   storageArray.push(elementaryFormDataArray);
   storageArray.push(hsGlobalArray);
   storageArray.push(collegeArray);
   localStorage.userData = JSON.stringify(storageArray);
+  renderCycle("college", "collegeResult");
+  event.target.reset();
+  scrollToHash('collegeResult');
 
 }
 
