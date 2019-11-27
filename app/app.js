@@ -21,6 +21,7 @@ var createElementaryForm = function () {
   var questionOneDrop = document.createElement('select');
   questionOneDrop.setAttribute('class', 'dropDowns');
   questionOneDrop.name = 'favoriteSubject';
+  questionOneDrop.required = true;
   questionOne.appendChild(questionOneDrop);
   var subjects = ['Math', 'literature', 'Science', 'Art'];
   for (var subjectOptions = 0; subjectOptions < subjects.length; subjectOptions++) {
@@ -35,6 +36,7 @@ var createElementaryForm = function () {
   elementaryFieldSet.appendChild(questionTwo);
   questionTwo.textContent = 'What were your favorite things to do?';
   var questionTwoDrop = document.createElement('select');
+  questionTwoDrop.required = true;
   questionTwoDrop.name = 'hobbiesAsKid';
   questionTwo.appendChild(questionTwoDrop);
   var ThingsToDO = ['Sports', 'Pick Your Nose', 'Play Video Games', 'Fight With Siblings', 'Watch TV'];
@@ -49,6 +51,7 @@ var createElementaryForm = function () {
   elementaryFieldSet.appendChild(questionThree);
   questionThree.textContent = 'Were you sent to the principals office?';
   var questionThreeDrop = document.createElement('select');
+  questionThreeDrop.required = true;
   questionThreeDrop.name = 'troubled';
   questionThree.appendChild(questionThreeDrop);
   var questionThreeChoices = ['Yes', 'No'];
@@ -67,6 +70,7 @@ var createElementaryForm = function () {
   questionFourField.setAttribute('class', 'inputField');
   questionFourField.type = 'text';
   questionFourField.name = 'cartoon';
+  questionFourField.required = true;
   questionFour.appendChild(questionFourField);
 
   formSubmission(elementaryFieldSet, 'elemetaryAnswers');
@@ -88,7 +92,9 @@ function submitHandlerElementary(event) {
     elementaryFormDataArray.push(addArray);
 
   }
+  renderCycle('elementary', 'elementaryResult');
   event.target.reset();
+  scrollToNextDiv('elementaryResult');
 }
 
 createElementaryForm();
@@ -121,7 +127,7 @@ function hsFormRender() {
   //  switched variables to global
   var hsSection = document.getElementById('hs');
   var hsFormElem = document.createElement('form');
-  hsFormElem.id = 'stringify';
+  hsFormElem.id = 'style';
   var hsFieldSetElem = document.createElement('fieldset');
   var hsLegendElem = document.createElement('legend');
   hsLegendElem.textContent = 'Life as a High School Student';
@@ -141,6 +147,7 @@ function hsFormRender() {
   var hsCliqueArray = ['Populars', 'Jocks', 'Good-Ats', 'Hipsters', 'The Brains', 'Normals', 'Stoners', 'Emos/Goths', 'Anime/Manga Fans', 'Loners', 'None of the above'];
   var cliqueDropDownElem = document.createElement('select');
   cliqueDropDownElem.name = 'hsCliqueMember';
+  cliqueDropDownElem.required = true;
   hsFieldSetElem.appendChild(cliqueDropDownElem);
 
   for (var path = 0; path < hsCliqueArray.length; path++) {
@@ -163,7 +170,6 @@ function hsFormRender() {
 
   for (var activity = 0; activity < hsActivityArray.length; activity++) {
     var activityOptionElem = document.createElement('option');
-    activityOptionElem.name = 'hsECActivity';
     activityOptionElem.value = hsActivityArray[activity];
     activityOptionElem.textContent = hsActivityArray[activity];
     activityDropDownElem.appendChild(activityOptionElem);
@@ -182,6 +188,7 @@ function hsFormRender() {
   hsLanguageLearned.type = 'radio';
   hsLanguageLearned.name = 'learnedLanguage';
   hsLanguageLearned.value = 'yes';
+  hsLanguageLearned.required = true;
   hsLanguageQuestionTrue.appendChild(hsLanguageLearned);
 
   var hsLanguageQuestionFalse = document.createElement('p');
@@ -207,6 +214,7 @@ function hsFormRender() {
   hsRelationship.type = 'radio';
   hsRelationship.name = 'relationship';
   hsRelationship.value = 'yes';
+  hsRelationship.required = true;
   hsRelationshipQuestionTrue.appendChild(hsRelationship);
 
   var hsRelationshipQuestionFalse = document.createElement('p');
@@ -233,6 +241,7 @@ function hsFormRender() {
   hsDiploma.type = 'radio';
   hsDiploma.name = 'diploma';
   hsDiploma.value = 'yes';
+  hsDiploma.required = true;
   hsDiplomaQuestionTrue.appendChild(hsDiploma);
 
   var hsDiplomaQuestionFalse = document.createElement('p');
@@ -275,9 +284,9 @@ function submitHandlerHighSchool(event) {
     hsGlobalArray.push(addArray);
 
   }
-  console.log('hsGlobalArray: ', hsGlobalArray);
+  renderCycle('highschool', 'highschoolResult');
   event.target.reset();
-
+  scrollToNextDiv('highschoolResult');
 }
 
 
@@ -312,6 +321,7 @@ function collegeFormRender() {
   var education = ['University', 'Technical School', 'Military', 'None'];
   var educationDropDownElem = document.createElement('select');
   educationDropDownElem.name = 'educationPath';
+  educationDropDownElem.required = true;
   educationPath.appendChild(educationDropDownElem);
 
 
@@ -330,6 +340,7 @@ function collegeFormRender() {
   var degreeType = ['Science', 'Arts', 'Math', 'None'];
   var degreeDropDownElem = document.createElement('select');
   degreeDropDownElem.name = 'degreetype';
+  degreeDropDownElem.required = true;
   degreeFamilyQuestion.appendChild(degreeDropDownElem);
 
   for (var family = 0; family < degreeType.length; family++) {
@@ -353,6 +364,7 @@ function collegeFormRender() {
   isMarried.type = 'radio';
   isMarried.name = 'maritalStatus';
   isMarried.value = 'yes';
+  isMarried.required = true;
   maritalQuestionTrue.appendChild(isMarried);
 
   var maritalQuestionFalse = document.createElement('p');
@@ -378,6 +390,7 @@ function collegeFormRender() {
   hasBeliefs.type = 'radio';
   hasBeliefs.name = 'beliefs';
   hasBeliefs.value = 'yes';
+  hasBeliefs.required = true;
   beliefsQuestionTrue.appendChild(hasBeliefs);
 
   var beliefsQuestionFalse = document.createElement('p');
@@ -416,6 +429,7 @@ function careerFormRender() {
   var career = ['Military', 'Buisness', 'Engineer', 'Finance', 'Skill Trade', 'Other'];
   var careerDropDownElem = document.createElement('select');
   careerDropDownElem.name = 'careerPath';
+  careerDropDownElem.required = true;
   careerPath.appendChild(careerDropDownElem);
 
   for (var path = 0; path < career.length; path++) {
@@ -433,6 +447,7 @@ function careerFormRender() {
   var hobbiesAsAdultText = document.createElement('input');
   hobbiesAsAdultText.name = 'adultHobbies';
   hobbiesAsAdultText.type = 'text';
+  hobbiesAsAdultText.required = true;
   adultHobbiesQuestion.appendChild(hobbiesAsAdultText);
 
 
@@ -449,6 +464,7 @@ function careerFormRender() {
   isMarriedWithKids.type = 'radio';
   isMarriedWithKids.name = 'maritalStatusAdult';
   isMarriedWithKids.value = 'yesKids';
+  isMarriedWithKids.required = true;
   maritalQuestionTrueWithKids.appendChild(isMarriedWithKids);
 
   var maritalQuestionTrue = document.createElement('p');
@@ -479,6 +495,7 @@ function careerFormRender() {
   var regionAdultField = document.createElement('input');
   regionAdultField.name = 'regionAsAdult';
   regionAdultField.type = 'text';
+  regionAdultField.required = true;
 
   regionAdultElement.appendChild(regionAdultField);
 
@@ -510,12 +527,15 @@ function submitHandlerCollege(event) {
   console.log('collegeArray :', collegeArray);
 
 
-  event.target.reset();
+
   storageArray.push(birthGlobalArray);
   storageArray.push(elementaryFormDataArray);
   storageArray.push(hsGlobalArray);
   storageArray.push(collegeArray);
   localStorage.userData = JSON.stringify(storageArray);
+  renderCycle('college', 'collegeResult');
+  event.target.reset();
+  scrollToNextDiv('collegeResult');
 
 }
 
@@ -533,7 +553,10 @@ function submitHandlerCareer(event) {
 
   }
   console.log('careerArray :', careerArray);
+  renderCycle('career', 'careerResult');
   event.target.reset();
+  scrollToNextDiv('careerResult');
+
   // storageArray
 }
 
@@ -766,6 +789,9 @@ function birthHandler(event) {
   console.log(regionText);
 
   event.target.reset();
+
+  renderCycle('birth', 'birthResult');
+
 }
 
 function deathHandler(event) {
@@ -786,7 +812,9 @@ function deathHandler(event) {
   console.log(bucketDropDownValue);
   console.log(fullfillmentCheck);
 
+  renderCycle('death', 'deathResult');
   event.target.reset();
+  scrollToNextDiv('deathResult');
 }
 
 document.getElementById('financialID').onclick = checkBoxCheck;
@@ -822,6 +850,18 @@ deathSubmitButton.textContent = 'Submit';
 deathForm.appendChild(deathSubmitButton);
 deathForm.addEventListener('submit', deathHandler);
 
+var renderCycle = function (cycle, parentElem) {
+  var getParentElem = document.getElementById(parentElem);
+  var createImage = document.createElement('img');
+  getParentElem.appendChild(createImage);
+  createImage.src = `images/${cycle}.png`;
+};
 
-//
 
+
+
+
+
+function scrollToNextDiv(hash) {
+  location.hash = '#' + hash;
+}
