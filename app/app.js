@@ -175,58 +175,48 @@ function hsFormRender() {
     activityDropDownElem.appendChild(activityOptionElem);
   }
 
-  // Foreign Language
-  var hsLanguageQuestion = document.createElement('p');
-  hsLanguageQuestion.textContent = 'Did you learn a foreign language?';
-  hsFieldSetElem.appendChild(hsLanguageQuestion);
+  // // Foreign Language
+  // var hsLanguageQuestion = document.createElement('p');
+  // hsLanguageQuestion.textContent = 'Did you learn a foreign language?';
+  // hsFieldSetElem.appendChild(hsLanguageQuestion);
 
-  var hsLanguageQuestionTrue = document.createElement('p');
-  hsLanguageQuestionTrue.textContent = 'Yes';
-  hsLanguageQuestion.appendChild(hsLanguageQuestionTrue);
+  // var hsLanguageQuestionTrue = document.createElement('p');
+  // hsLanguageQuestionTrue.textContent = 'Yes';
+  // hsLanguageQuestion.appendChild(hsLanguageQuestionTrue);
 
-  var hsLanguageLearned = document.createElement('input');
-  hsLanguageLearned.type = 'radio';
-  hsLanguageLearned.name = 'learnedLanguage';
-  hsLanguageLearned.value = 'yes';
-  hsLanguageLearned.required = true;
-  hsLanguageQuestionTrue.appendChild(hsLanguageLearned);
+  // var hsLanguageLearned = document.createElement('input');
+  // hsLanguageLearned.type = 'radio';
+  // hsLanguageLearned.name = 'learnedLanguage';
+  // hsLanguageLearned.value = 'yes';
+  // hsLanguageLearned.required = true;
+  // hsLanguageQuestionTrue.appendChild(hsLanguageLearned);
 
-  var hsLanguageQuestionFalse = document.createElement('p');
-  hsLanguageQuestionFalse.textContent = 'No';
-  hsLanguageQuestion.appendChild(hsLanguageQuestionFalse);
+  // var hsLanguageQuestionFalse = document.createElement('p');
+  // hsLanguageQuestionFalse.textContent = 'No';
+  // hsLanguageQuestion.appendChild(hsLanguageQuestionFalse);
 
-  var learnedLanguageNeg = document.createElement('input');
-  learnedLanguageNeg.type = 'radio';
-  learnedLanguageNeg.name = 'learnedLanguage';
-  learnedLanguageNeg.value = 'no';
-  hsLanguageQuestionFalse.appendChild(learnedLanguageNeg);
+  // var learnedLanguageNeg = document.createElement('input');
+  // learnedLanguageNeg.type = 'radio';
+  // learnedLanguageNeg.name = 'learnedLanguage';
+  // learnedLanguageNeg.value = 'no';
+  // hsLanguageQuestionFalse.appendChild(learnedLanguageNeg);
 
   // Relationship Status
   var hsRelationshipQuestion = document.createElement('p');
   hsRelationshipQuestion.textContent = 'Did you form a romantic relationship?';
   hsFieldSetElem.appendChild(hsRelationshipQuestion);
 
-  var hsRelationshipQuestionTrue = document.createElement('p');
-  hsRelationshipQuestionTrue.textContent = 'Yes';
-  hsRelationshipQuestion.appendChild(hsRelationshipQuestionTrue);
+  var hsRelationshipArray = ['Yes', 'No'];
+  var relationshipDropDownElem = document.createElement('select');
+  relationshipDropDownElem.name = 'relationship';
+  hsRelationshipQuestion.appendChild(relationshipDropDownElem);
 
-  var hsRelationship = document.createElement('input');
-  hsRelationship.type = 'radio';
-  hsRelationship.name = 'relationship';
-  hsRelationship.value = 'yes';
-  hsRelationship.required = true;
-  hsRelationshipQuestionTrue.appendChild(hsRelationship);
-
-  var hsRelationshipQuestionFalse = document.createElement('p');
-  hsRelationshipQuestionFalse.textContent = 'No';
-  hsRelationshipQuestion.appendChild(hsRelationshipQuestionFalse);
-
-  var foreverAlone = document.createElement('input');
-  foreverAlone.type = 'radio';
-  foreverAlone.name = 'relationship';
-  foreverAlone.value = 'no';
-  hsRelationshipQuestionFalse.appendChild(foreverAlone);
-
+  for (var relation = 0; relation < hsRelationshipArray.length; relation++) {
+    var relationshipOptionElem = document.createElement('option');
+    relationshipOptionElem.value = hsRelationshipArray[relation];
+    relationshipOptionElem.textContent = hsRelationshipArray[relation];
+    relationshipDropDownElem.appendChild(relationshipOptionElem);
+  }
   // Obtained Diploma
 
   var hsDiplomaQuestion = document.createElement('p');
@@ -273,7 +263,7 @@ function submitHighSchoolForm(formElem, formValue) {
 
 function submitHandlerHighSchool(event) {
   event.preventDefault();
-  var nameArray = [event.target.hsCliqueMember, event.target.hsECActivity, event.target.learnedLanguage, event.target.relationship, event.target.diploma];
+  var nameArray = [event.target.hsCliqueMember, event.target.hsECActivity, event.target.relationship, event.target.diploma];
   for (var i = 0; i < nameArray.length; i++) {
     var addArray = [];
     if (nameArray[i].name === undefined) {
@@ -403,7 +393,7 @@ function collegeFormRender() {
   doesNotBelieve.value = 'no';
   beliefsQuestionFalse.appendChild(doesNotBelieve);
 
-  formSubmission(collegeFormElem, 'collegeSubmit');
+  formSubmission(collegeFeildSetElem, 'collegeSubmit');
 
 }
 
