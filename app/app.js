@@ -845,6 +845,7 @@ var renderCycle = function (cycle, parentElem) {
   var createImage = document.createElement('img');
   getParentElem.appendChild(createImage);
   createImage.src = `images/${cycle}.png`;
+  createImage.setAttribute('class', 'resultImg');
 };
 
 

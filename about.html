@@ -2,48 +2,8 @@
 <html lang="en">
 
 <head>
-  <!-- In page css retro msdos look ideas for potential stylesheet incorportation-->
-  <style>
-
-  body {   
-  background-color: black;
-  background-image: radial-gradient(rgba(5, 160, 5, 0.75), black 130%);
-  background-attachment:fixed;
-  color: rgb(87, 173, 48);
-  height: 99vh;
-  }
-
-
-
-#navbar {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid rgb(87, 173, 48);
-  background-color: rgb(89, 144, 88);
-}
-
-#navbar li {
-  display: inline-block;
-  width: 6vw;
-}
-
-main {
-margin-bottom: 10vh;
-}
-
-
-
-
-
-
-
-  </style>
-  <!--<link rel="stylesheet" href="style/reset.css">-->
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/about.css">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
   <title>About Us</title>
   <link href="https://fonts.googleapis.com/css?family=B612+Mono|Cutive+Mono|Gruppo|Life+Savers|Oxygen+Mono|PT+Mono|Press+Start+2P|Turret+Road&display=swap" rel="stylesheet">
@@ -57,13 +17,16 @@ margin-bottom: 10vh;
       <h1 align="center">The Team</h1>
     <div>
  
-      <ul style="list-style: none;">
+      <ul id="topThree">
         <li>
+          <div>
             <img src="images/P.Doan.jpg">
             <p>Phong Doan</p>
             <p>Job Title</p>
-            <p>Married, two children 9 boy 2 daughter. creative problem solver, vietnamese and army veteran</p>
+            <p>Phong is an Army Veteran and father of two children. Phong enjoys the creative problem solving aspect of software development. </p>
+          </div>
           </li>
+    
          <li>
             <img src="images/H.Thomas.jpg">
             <p>Hollie Thomas</p>
@@ -76,6 +39,8 @@ margin-bottom: 10vh;
             <p>Software Developer</p>
             <p>20 yr old male, German Spaniard, speaks 5 languages, enjoys the logical processing of software development</p>
         </li>
+      </ul>
+      <ul id="bottomtwo">
         <li>
             <img src="images/T.Coots.jpg">
             <p>Travis Coots</p>
