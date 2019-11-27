@@ -4,25 +4,35 @@
 <head>
   <!-- In page css retro msdos look ideas for potential stylesheet incorportation-->
   <style>
+
   body {   
   background-color: black;
   background-image: radial-gradient(rgba(5, 160, 5, 0.75), black 130%);
   background-attachment:fixed;
   color: rgb(87, 173, 48);
   height: 99vh;
-}
+  }
 
 
 
-#sitemap {
+#navbar {
   position: fixed;
   bottom: 0;
   width: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(87, 173, 48);
+  border: 1px solid rgb(87, 173, 48);
+  background-color: rgb(89, 144, 88);
+}
+
+#navbar li {
+  display: inline-block;
+  width: 6vw;
+}
+
+main {
+margin-bottom: 10vh;
 }
 
 
@@ -41,42 +51,54 @@
 
 <body>
   <header>
-    <nav>
-      <!-- Navigation links to from main index-->
-      <ul id="sitemap">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+    
   </header>
   <main>
+      <h1 align="center">The Team</h1>
     <div>
- <h1>The Team</h1>
-      <ul>
+ 
+      <ul style="list-style: none;">
         <li>
             <img src="images/P.Doan.jpg">
             <p>Phong Doan</p>
             <p>Job Title</p>
-        </li>
-        <li>
+            <p>Married, two children 9 boy 2 daughter. creative problem solver, vietnamese and army veteran</p>
+          </li>
+         <li>
             <img src="images/H.Thomas.jpg">
             <p>Hollie Thomas</p>
             <p>Job Title</p>
-        </li>
-        <li>
+            <p>Hollie is currently learning software development at Code Fellows. Hollie is happily married to her husband Andrew and together they have two beautiful boys; Braeden and Oliver. Hollie is working her way from being a stay at home mom to engaging in a new career in software development. Hollie wants to design educational and interactive games for parents to use with their children. She hopes to help other parents bridge the widening gap between involved and automated child education.</p>
+           </li>
+         <li>
             <img src="images/M.Isenberg.jpg">
             <p>Mattaus Isenberg</p>
+            <p>Software Developer</p>
+            <p>20 yr old male, German Spaniard, speaks 5 languages, enjoys the logical processing of software development</p>
+        </li>
+        <li>
+            <img src="images/T.Coots.jpg">
+            <p>Travis Coots</p>
             <p>Job Title</p>
+            <p>Married, 4 yr old daughter, married airforce vet, orgiginally from cali, likes the creative process and implementation of coding. Enjoys the mystery of trouble shooting
+                Hollie married, two kids, army veteran, enjoys the challenges and constant evolving field of sofware dev</p>
         </li>
         <li>
             <img src="images/C.Oram.jpg">
             <p>David Oram</p>
             <p>Job Title</p>
+            <p>Cyril goes by the name David as it is much easier for everyone to pronounce. David is from Baltimore Maryland and has 2 children. He is currently moving into software development from an extensive career in avionics as a USMC veteran followed by computer break fix support of the USAF as a civilian. This was then followed by work for the USN as an IT manager and rounded out as the S6 or computer civlian for the USARMY</p>
         </li>
       </ul>
     </div>
     <footer>
-
+      <nav>
+        <!-- Navigation links to from main index-->
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li style="float:right"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
     </footer>
   </main>
   <script src="app/app.js"></script>
