@@ -856,3 +856,15 @@ var renderCycle = function (cycle, parentElem) {
 function scrollToNextDiv(hash) {
   location.hash = '#' + hash;
 }
+
+
+function scrollDisable() {
+  var horizontal = window.scrollX;
+  var vertical = window.scrollY;
+  window.onscroll = function() {window.scrollTo(horizontal, vertical);};
+}
+
+function scrollEnable() {
+  window.onscroll=function(){};
+}
+
