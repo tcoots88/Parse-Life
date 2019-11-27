@@ -92,8 +92,9 @@ function submitHandlerElementary(event) {
     elementaryFormDataArray.push(addArray);
 
   }
+  renderCycle("elementary", "elementaryResult");
   event.target.reset();
-  scrollToHash('college');
+  scrollToHash('elementaryResult');
 }
 
 createElementaryForm();
@@ -283,7 +284,10 @@ function submitHandlerHighSchool(event) {
     hsGlobalArray.push(addArray);
 
   }
+  renderCycle("highschool", "highschoolResult");
   event.target.reset();
+  scrollToHash('highschoolResult');
+  
 
 }
 
@@ -524,7 +528,9 @@ function submitHandlerCollege(event) {
   }
   console.log('collegeArray :', collegeArray);
 
-
+  renderCycle("college", "collegeResult");
+  event.target.reset();
+  scrollToHash('collegeResult');
   event.target.reset();
   storageArray.push(birthGlobalArray);
   storageArray.push(elementaryFormDataArray);
@@ -548,6 +554,9 @@ function submitHandlerCareer(event) {
 
   }
   console.log('careerArray :', careerArray);
+  renderCycle("career", "careerResult");
+  event.target.reset();
+  scrollToHash('careerResult');
   event.target.reset();
   // storageArray
 }
@@ -782,7 +791,7 @@ function birthHandler(event) {
 
   event.target.reset();
 
-  renderBirthExplanation();
+  renderCycle("birthExplanation", birth)
 
 }
 
@@ -804,7 +813,13 @@ function deathHandler(event) {
   console.log(bucketDropDownValue);
   console.log(fullfillmentCheck);
 
+  renderCycle("death", "deathResult");
   event.target.reset();
+  scrollToHash('deathResult');
+
+  event.target.reset();
+
+  renderCycle("birthResult", birth)
 }
 
 document.getElementById('financialID').onclick = checkBoxCheck;
@@ -841,11 +856,11 @@ deathForm.appendChild(deathSubmitButton);
 deathForm.addEventListener('submit', deathHandler);
 
 var renderCycle = function (cycle, parentElem) {
-
+  var getParentElem = document.getElementById(parentElem)
   var createImage = document.createElement('img')
-  parentElem.appendChild(createImage)
+  getParentElem.appendChild(createImage)
   createImage.src = `images/${cycle}.png`
-}
+};
 
 
 
