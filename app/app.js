@@ -558,7 +558,7 @@ function submitHandlerCareer(event) {
   renderCycle("career", "careerResult");
   event.target.reset();
   scrollToHash('careerResult');
-  event.target.reset();
+
   // storageArray
 }
 
@@ -818,7 +818,6 @@ function deathHandler(event) {
   event.target.reset();
   scrollToHash('deathResult');
 
-  event.target.reset();
 
   renderCycle("birthResult", birth)
 }
