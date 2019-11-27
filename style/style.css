@@ -5,7 +5,15 @@ html {
   color           : greenyellow;
 }
 
-.form {
+
+html {
+  background-color: black;
+  font-family: 'Inconsolata', monospace;
+  font-size       : 1.5em;
+  color           : greenyellow;
+}
+
+.explanation {
   font-family: 'Inconsolata', monospace;
   font-weight: bold;
   background-color: black;
@@ -45,6 +53,7 @@ select {
   line-height: 0.55;
   text-align: center;
   vertical-align: middle;
+
 }
 
 span {
@@ -99,7 +108,6 @@ span {
   animation-direction: alternate;
 }
 
- 
 .loading {
   font-size: 2em;
   padding-top: 250px;
@@ -167,9 +175,6 @@ width: 6vw;
 main {
 margin-bottom: 10vh;
 }
-
-
-
 
 @media screen and (min-width: 700px) {
 	body > article {

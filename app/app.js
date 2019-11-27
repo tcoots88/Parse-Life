@@ -92,8 +92,9 @@ function submitHandlerElementary(event) {
     elementaryFormDataArray.push(addArray);
 
   }
+  renderCycle('elementary', 'elementaryResult');
   event.target.reset();
-  scrollToHash('college');
+  scrollToNextDiv('elementaryResult');
 }
 
 createElementaryForm();
@@ -283,8 +284,9 @@ function submitHandlerHighSchool(event) {
     hsGlobalArray.push(addArray);
 
   }
+  renderCycle('highschool', 'highschoolResult');
   event.target.reset();
-
+  scrollToNextDiv('highschoolResult');
 }
 
 
@@ -525,12 +527,15 @@ function submitHandlerCollege(event) {
   console.log('collegeArray :', collegeArray);
 
 
-  event.target.reset();
+
   storageArray.push(birthGlobalArray);
   storageArray.push(elementaryFormDataArray);
   storageArray.push(hsGlobalArray);
   storageArray.push(collegeArray);
   localStorage.userData = JSON.stringify(storageArray);
+  renderCycle('college', 'collegeResult');
+  event.target.reset();
+  scrollToNextDiv('collegeResult');
 
 }
 
@@ -548,7 +553,10 @@ function submitHandlerCareer(event) {
 
   }
   console.log('careerArray :', careerArray);
+  renderCycle('career', 'careerResult');
   event.target.reset();
+  scrollToNextDiv('careerResult');
+
   // storageArray
 }
 
@@ -781,6 +789,9 @@ function birthHandler(event) {
   console.log(regionText);
 
   event.target.reset();
+
+  renderCycle('birth', 'birthResult');
+
 }
 
 function deathHandler(event) {
@@ -801,7 +812,9 @@ function deathHandler(event) {
   console.log(bucketDropDownValue);
   console.log(fullfillmentCheck);
 
+  renderCycle('death', 'deathResult');
   event.target.reset();
+  scrollToNextDiv('deathResult');
 }
 
 document.getElementById('financialID').onclick = checkBoxCheck;
@@ -837,9 +850,18 @@ deathSubmitButton.textContent = 'Submit';
 deathForm.appendChild(deathSubmitButton);
 deathForm.addEventListener('submit', deathHandler);
 
+var renderCycle = function (cycle, parentElem) {
+  var getParentElem = document.getElementById(parentElem);
+  var createImage = document.createElement('img');
+  getParentElem.appendChild(createImage);
+  createImage.src = `images/${cycle}.png`;
+};
 
-//
 
-function scrollToHash(hash) {
+
+
+
+
+function scrollToNextDiv(hash) {
   location.hash = '#' + hash;
 }

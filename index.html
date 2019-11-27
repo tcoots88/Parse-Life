@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="style/reset.css">
+  <!-- <link rel="stylesheet" href="style/reset.css"> -->
   <link rel="stylesheet" href="style/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Press+Start+2P&display=swap" rel="stylesheet"> 
   <title>#Parse Life#</title>
-  <link href="https://fonts.googleapis.com/css?family=B612+Mono|Cutive+Mono|Gruppo|Life+Savers|Oxygen+Mono|PT+Mono|Press+Start+2P|Turret+Road&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,15 +15,10 @@
   <main>
     <!-- Splash Page -->
     <div id="splash">
-      <p class="text" id="Press">
+      <p class="Logo" id="Press">
         Parse
-        <!--This comment is required to remove whitespace created by inline-block elements.
-         --><span>
           <span class="stack bouncing">.</span>
-          <!-- <span class="stack">ı</span> -->
-        </span>
-        <!--This comment is required to remove whitespace created by inline-block elements.
-         -->life
+        life
       </p>
     </div>
     <!-- First Function: Birth -->
@@ -33,11 +27,10 @@
       <h2>Birth - Constructor</h2>
     </div>
     <!-- Explanation of First Function -->
-    <div>
-      <h2></h2>
+    <div id='birthResult'>
     </div>
     <!-- "Loading Page" -->
-    <div class="loading">
+    <div class="loading" id="LoadingOne">
       Loading<span class="one">.</span><span class="two">.</span><span class="three">.</span>
     </div>
     <!-- Second Function: Elementary School -->
@@ -45,11 +38,11 @@
       <h2>Elementary - Methods</h2>
     </div>
     <!-- Explanation of Second Function -->
-    <div>
+    <div id="elementaryResult">
       <h2></h2>
     </div>
     <!-- "Loading Page" -->
-    <div class="loading">
+    <div class="loading" id="LoadingTwo">
       Loading<span class="one">.</span><span class="two">.</span><span class="three">.</span>
     </div>
     <!-- Third Function: High School -->
@@ -58,11 +51,11 @@
       <h2>High School - Finished Product</h2>
     </div>
     <!-- Explanation of Third Function -->
-    <div>
+    <div id='highschoolResult'>
       <h2></h2>
     </div>
     <!-- "Loading Page" -->
-    <div class="loading">
+    <div class="loading" id="LoadingThree">
       Loading<span class="one">.</span><span class="two">.</span><span class="three">.</span>
     </div>
     <!-- Fourth Function: College -->
@@ -70,11 +63,11 @@
       <h2>College - Stringify</h2>
     </div>
     <!-- Explanation of Fourth Function -->
-    <div>
+    <div id="collegeResult">
       <h2></h2>
     </div>
     <!-- "Loading Page" -->
-    <div class="loading">
+    <div class="loading" id="LoadingFour">
       Loading<span class="one">.</span><span class="two">.</span><span class="three">.</span>
     </div>
     <!-- Fifth Function: Job/Career -->
@@ -82,21 +75,20 @@
       <h2>Career - Finished Product</h2> 
     </div>
     <!-- Explanation of Fifth Function -->
-    <div>
+    <div id="careerResult">
       <h2></h2>
     </div>
     <!-- "Loading Page" -->
-    <div class="loading">
+    <div class="loading" id="LoadingFive">
       Loading<span class="one">.</span><span class="two">.</span><span class="three">.</span>
     </div>
     <!-- Sixth Function: Death -->
     <div id='death' class="form">
       <!-- Mattäus -->
       <h2>Death - Deallocation</h2>
-
     </div>
     <!-- Explanation of Sixth Function -->
-    <div>
+    <div id="deathResult">
       <h2></h2>
     </div>
     <!-- About Me Part 1 -->
