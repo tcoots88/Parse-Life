@@ -286,7 +286,7 @@ div {
 		margin: 0 0 10vh auto;
 		position: sticky;
 		top: 0;
-		// overflow: hidden;
+		overflow: hidden;
 		padding: 5vmin;
 		box-shadow: -4px -4px 8px rgba(0,0,0,.4);
 			}
