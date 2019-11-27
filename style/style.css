@@ -167,6 +167,9 @@ width: 6vw;
 main {
 margin-bottom: 10vh;
 }
+body {
+	overflow: hidden;
+}
 
 @media screen and (min-width: 700px) {
 	body > article {
