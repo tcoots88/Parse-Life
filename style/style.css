@@ -7,6 +7,13 @@
   color: greenyellow;
 };
 
+.explanation {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  background-color: black;
+  color: greenyellow;
+}
+
 select {
   width: 200px;
   font-family: 'Inconsolata', monospace;

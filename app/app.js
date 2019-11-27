@@ -781,6 +781,9 @@ function birthHandler(event) {
   console.log(regionText);
 
   event.target.reset();
+
+  renderBirthExplanation();
+
 }
 
 function deathHandler(event) {
@@ -837,8 +840,17 @@ deathSubmitButton.textContent = 'Submit';
 deathForm.appendChild(deathSubmitButton);
 deathForm.addEventListener('submit', deathHandler);
 
+var renderCycle = function (cycle, parentElem) {
 
-//
+  var createImage = document.createElement('img')
+  parentElem.appendChild(createImage)
+  createImage.src = `images/${cycle}.png`
+}
+
+
+
+
+
 
 function scrollToHash(hash) {
   location.hash = '#' + hash;
