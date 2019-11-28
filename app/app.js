@@ -74,6 +74,7 @@ var createElementaryForm = function () {
   questionFour.appendChild(questionFourField);
 
   formSubmission(elementaryFieldSet, 'elemetaryAnswers');
+  
 };
 
 function submitHandlerElementary(event) {
@@ -95,6 +96,7 @@ function submitHandlerElementary(event) {
   renderCycle('elementary', 'elementaryResult');
   event.target.reset();
   scrollToNextDiv('elementaryResult');
+  
 }
 
 createElementaryForm();
@@ -103,12 +105,11 @@ elementaryForm.addEventListener('submit', submitHandlerElementary);
 
 
 
-// var createSplashPage = function () {
-//   var getSplash = document.getElementById('splash');
-//   var dataAlert = alert('Warning: This page asks you for information about yourself. The information will be used to create a personalized lesson about Javascript demonstrated by your life choices. The information will be stored on your device, in its local file system. Once you complete the entire lesson all information will be deleted. By selecting "ok" you agree to continue.  ');
-// };
+var createSplashPage = function () {
+  var dataAlert = alert('Warning: This page asks you for information about yourself. The information will be used to create a personalized lesson about Javascript demonstrated by your life choices. The information will be stored on your device, in its local file system. Once you complete the entire lesson all information will be deleted. By selecting "ok" you agree to continue.  ');
+};
 
-// createSplashPage();
+createSplashPage();
 
 // High School Global Array
 
@@ -858,13 +859,14 @@ function scrollToNextDiv(hash) {
 }
 
 
-function scrollDisable() {
-  var horizontal = window.scrollX;
-  var vertical = window.scrollY;
-  window.onscroll = function() {window.scrollTo(horizontal, vertical);};
-}
+// function scrollDisable() {
+//   var horizontal = window.scrollX;
+//   var vertical = window.scrollY;
+//   window.onscroll = function() {window.scrollTo(horizontal, vertical);};
+// }
 
-function scrollEnable() {
-  window.onscroll=function(){};
-}
+// function scrollEnable() {
+//   window.onscroll=function(){};
+// }
 
+// scrollDisable();
